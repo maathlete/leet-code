@@ -11,7 +11,6 @@ class Trie:
     def __init__(self):
 
         self.root = Node()
-        self.prefix_sums = {}
 
     def insert(self, word):
 
