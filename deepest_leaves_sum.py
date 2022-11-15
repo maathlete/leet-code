@@ -9,13 +9,13 @@
 class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
 
-        min_level = float('-inf')
+        max_level = float('-inf')
 
         total = 0
 
         def dfs(root, level):
 
-            nonlocal min_level
+            nonlocal max_level
             nonlocal total
 
             if not root:
@@ -24,13 +24,13 @@ class Solution:
 
             if root.left is None and root.right is None:
 
-                if level == min_level:
+                if level == max_level:
 
                     total += root.val
 
-                if level > min_level:
+                if level > max_level:
 
-                    min_level = level
+                    max_level = level
                     
                     total = root.val
 
